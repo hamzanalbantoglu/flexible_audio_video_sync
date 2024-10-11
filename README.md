@@ -1,2 +1,1 @@
-# New
-Repository
+# Hello Github!
