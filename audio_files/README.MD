@@ -1,0 +1,1 @@
+# This folder must contain the processed WAV files (one per trial - not the raw audio files), which are then used to overlay onto the cut videos. Namings of the audio files should match the cut videos.
