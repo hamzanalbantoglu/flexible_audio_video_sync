@@ -10,7 +10,7 @@ This repository demonstrates how to take an external video of an event (which is
 The following files must be in the same directory as your main script (or the Jupyter notebook):
 - lsl_synced_long_audio_raw.csv - This is the LSL-synced raw audio in CSV format.
 - external_video.mp4 - The external (trimmed-but-unaligned) video to be synced.
-- A folder named CSF_Files which contains trial-specific CSV files (each trial's LSL-synced raw audio in CSV format).
+- A folder named CSV_Files which contains trial-specific CSV files (each trial's LSL-synced raw audio in CSV format).
 - A folder named audio_files which contains trial-specific WAV files (each trial's LSL-sycned processed audio in WAV format).
 
 ## Usage Instructions
