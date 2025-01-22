@@ -19,7 +19,7 @@ Install the prerequisites listed above (ffmpeg and shign).
 Check your folder structure to ensure the required files are in place:
 - The sync_script.ipynb notebook is at the top level.
 - external_video.mp4 and lsl_synced_long_audio_raw.csv in the same directory.
-- CSF_Files folder with your trial CSVs.
+- CSV_Files folder with your trial CSVs.
 - audio_files folder with processed WAV files (one per trial - not the raw audio files)
 Open sync_script.ipynb in Jupyter (or VSCode, etc.) and run the cells in order.
 Output will appear in:
