@@ -1,0 +1,1 @@
+# This folder should contain the external video(s) that will be synced to the LSL timeline.

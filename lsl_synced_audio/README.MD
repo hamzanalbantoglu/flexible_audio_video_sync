@@ -1,0 +1,1 @@
+# This folder should contain the LSL-synced audio(s) in raw format (could be a CSV file). The script will use this audio to align the external video to LSL timeline.
