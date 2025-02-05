@@ -17,7 +17,7 @@ The following files must be in the same directory as your main script (or the Ju
 
 ## Usage Instructions
 Clone this repository (or download as ZIP).
-Install all the prerequisites listed above (FFmpeg and Shign) and in "prerequisites.txt" file (also see explanations in the Jupyter file).
+Install all the prerequisites listed above (FFmpeg and Shign) and in "requirements.txt" file (also see explanations in the Jupyter file).
 Check your folder structure to ensure the required files are in place: **synchronize_and_cut_script.ipynb** notebook must be at the top level.
 Open **synchronize_and_cut_script.ipynb** in Jupyter (or VSCode, etc.) and run all the cells in order.
 
