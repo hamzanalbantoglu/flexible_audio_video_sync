@@ -34,7 +34,7 @@ Once all the cells are run, "outputs" folder should include:
 ## Important Note
 You must modify the **```shift_align()```** function in Shign package to return **shift_ms**. The code snippet in the notebook shows an example usage where shift_align() returns shift_ms. Originally, the function only returns the aligned versions of the first and second audio tracks. To modify the function:
 
-- Find the **installation path** of the Shign package. (*You can run the following command on terminal*):
+- Find the **installation path** of the Shign package. (*You can run the following command on terminal or on the same Jupyter Notebook*):
 ```bash
 import shign
 print(shign.__file__)
