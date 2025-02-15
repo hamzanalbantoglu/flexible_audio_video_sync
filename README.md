@@ -51,8 +51,8 @@ Once all the cells are run, "outputs" folder should include:
 - audio_overlay/ for the final audio-overlaid videos.
 
 ## Troubleshooting
-FFmpeg not found - Ensure FFmpeg is on your system PATH.
-Memory issues - If your CSV files or videos are too large, you may need more RAM. It is normal for the some parts of the script to take a while depending on the specifics of your computer, video, or audio.
+- FFmpeg not found - Ensure FFmpeg is on your system PATH.
+- Memory issues - If your CSV files or videos are too large, you may need more RAM. It is normal for the some parts of the script to take a while depending on the specifics of your computer, video, or audio.
 
 ## **Note about Shign**   
 This repository hosts a stable and slightly modified version of **Shign** to prevent any dependency issues after possible future updates.   
