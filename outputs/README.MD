@@ -1,4 +1,4 @@
-The files in this folder are be generated once the main script runs. Following outputs should be located here:
+The files in this folder will be generated once the main script runs. Following outputs should be located here:
 
 - extracted_video_audio.wav
 - lsl_synced_audio.wav
