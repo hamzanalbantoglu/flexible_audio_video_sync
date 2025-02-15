@@ -2,7 +2,7 @@ import numpy as np
 import scipy.signal
 import librosa
 
-from shign.util import ms_to_samples, samples_to_ms, sec_to_frames, frames_to_ms, audio_to_rms_envelope
+from .util import ms_to_samples, samples_to_ms, sec_to_frames, frames_to_ms, audio_to_rms_envelope
 
 def get_shift_ms(audio_a, audio_b, sr_a, sr_b, win_length_ms=25., hop_length_ms=10., min_overlap_sec=1., max_shift_sec=30.):
     """
