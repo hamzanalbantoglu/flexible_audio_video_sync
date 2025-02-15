@@ -36,6 +36,7 @@ The following files must be in the same directory as your main script (or the Ju
 - A folder named **external_video** - It must include the external video (trimmed-but-unaligned) that will be aligned to LSL-synced audio. (Please download the sample video from [here](https://drive.google.com/file/d/1-ixWWqnBZPDBtfkYs6oQtREuIyyhHQTC/view?usp=drive_link) and place it in **external_video** folder.)
 - A folder named **csv_files** which contains all trial-specific CSV files (each trial's LSL-synced raw audio in CSV format).
 - A folder named **audio_files** which contains trial-specific WAV files (each trial's LSL-sycned processed audio in WAV format).
+- A folder named **shign** which contains a modified version of [Shign](https://github.com/KnurpsBram/shign).
 
 Open **synchronize_and_cut_script.ipynb** in Jupyter (or VSCode, etc.) and run all the cells in order.
 
