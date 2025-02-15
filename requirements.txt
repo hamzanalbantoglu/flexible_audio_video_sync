@@ -4,4 +4,3 @@ matplotlib==3.9.0
 numpy==1.26.4
 pandas==2.2.2
 scipy==1.14.0
-shign==1.0
