@@ -1,63 +1,88 @@
-# Aligning and Segmenting Trial Videos from an External Video Using LSL-Synced Audio of the Same Event
+# Multi-Scenario Video and Audio Synchronization and Segmentation
 
-This repository demonstrates how to take an external video of an event (which is not synced to Lab Stream Layer) and align it to LSL-synced audio of the same event. It also shows how to cut this video into trial-size segments so that they match the timing information from the LSL stream. At the end of the script, audio files of each trial can also be overlaid on the trial-size cut videos to inspect the accuracy of synchronization.
+This repository provides a **multi-purpose pipeline for synchronizing video and audio** recordings of the same event, recorded separately on different devices.
+
+It supports **three main scenarios**:
+
+- **Video-Audio** Alignment (e.g., aligning a video with a separately recorded audio file).
+- **Video-Video** Alignment (e.g., aligning two videos of the same event by their audio).
+- **Audio-Audio** Alignment (e.g., synchronizing two independent audio recordings).
+
+**OPTIONAL (for LSL users)**: If your experiment uses Lab Streaming Layer (LSL), this script provides additional steps to:
+
+- **Segment** an aligned video into **trial-sized clips** based on LSL timestamps.
+- **Overlay trial-specific audio** onto segmented videos for verification, or increased audio quality.
 
 ## Prerequisites
 - Python 3.10 or later.
-- **"FFmpeg"** installed and added to PATH. Installation guide for Windows [here](https://www.youtube.com/watch?v=mqY4Dl9SyHM).
+- **"FFmpeg"** installed and added to PATH. Installation guide for Windows 
+  <a href="https://www.youtube.com/watch?v=mqY4Dl9SyHM" target="_blank">here</a>.
 
 ## GitHub Repository & Installation
 To reproduce this notebook, follow these steps:
 
 ```bash
 # 1 - Clone the Repository
-git clone https://github.com/hamzanalbantoglu/lsl_audio_video_alignment.git
-cd lsl_audio_video_alignment
+git clone https://github.com/hamzanalbantoglu/flexible_audio_video_sync.git
+cd flexible_audio_video_sync
 
 # 2 - Create a Conda Environment (Recommended)
-conda create --name lsl_env python=3.12
-conda activate lsl_env
+conda create --name audio_video_sync python=3.12
+conda activate audio_video_sync
 
 # 3 - Install Dependencies
 pip install -r requirements.txt
 
 # 4 - Add Conda Environment to Jupyter Notebook
 pip install ipykernel
-python -m ipykernel install --user --name=lsl_env --display-name "Python (lsl_env)"
+python -m ipykernel install --user --name=audio_video_sync --display-name "Python (audio_video_sync)"
 
 # 5 - Run the Jupyter Notebook
 jupyter notebook
 ```
 
-## Usage Instructions
+## Required Input & Folder Structure
 
-The following files must be in the same directory as your main script (or the Jupyter notebook):
-- A folder named **lsl_synced_audio** - It must include the LSL-synced raw audio in CSV format. (Please download the sample audio from [here](https://drive.google.com/file/d/15lRvcV6_iVn_KG4qk_3KA4Pse6im1WMA/view?usp=drive_link) and place it in **lsl_synced_audio** folder.)
-- A folder named **external_video** - It must include the external video (trimmed-but-unaligned) that will be aligned to LSL-synced audio. (Please download the sample video from [here](https://drive.google.com/file/d/1cGx2WheZKp-XOkvrt-tfn-up0m7V1ifW/view?usp=sharing) and place it in **external_video** folder.)
-- A folder named **csv_files** which contains all trial-specific CSV files (each trial's LSL-synced raw audio in CSV format).
-- A folder named **audio_files** which contains trial-specific WAV files (each trial's LSL-sycned processed audio in WAV format).
-- A folder named **shign** which contains a modified version of [Shign](https://github.com/KnurpsBram/shign).
+Before running the script, place your input files inside two folders:
 
-Open **synchronize_and_cut_script.ipynb** in Jupyter (or VSCode, etc.) and run all the cells in order.
+1. **`input1/`** → First input (video or audio).  
+2. **`input2/`** → Second input (video or audio).  
 
-Once all the cells are run, "outputs" folder should include:
-- extracted_video_audio.wav
-- lsl_synced_audio.wav
-- aligned_video_audio.wav
-- aligned_video.mp4
-- trial_times.csv
-- mapped_event_markers.csv
-- cut_videos/ folder for per-trial cut videos.
-- audio_overlay/ for the final audio-overlaid videos.
+**Rules for Inputs:**
+
+- If using video and audio, place video in ```input1/``` and audio in ```input2/```.
+- If using two videos, place the video to be trimmed in ```input1/``` and the reference video in ```input2/```.
+- If using two audio files, place the audio to be trimmed in ```input1/``` and the reference audio in ```input2/```.
+- Each folder must contain only one valid file (.MP4, .AVI, .WAV, or .CSV).
+
+### Folder Structure:
+
+📁 **project_folder/**
+
+- 📁 **input1/** → Contains a video OR an audio file (Please download the sample video input from <a href="https://drive.google.com/file/d/1cGx2WheZKp-XOkvrt-tfn-up0m7V1ifW/view?usp=sharing" target="_blank">here</a> and place it in ```input1/``` folder.)
+- 📁 **input2/** → Contains a video OR an audio file (Please download the sample audio input from <a href="https://drive.google.com/file/d/15lRvcV6_iVn_KG4qk_3KA4Pse6im1WMA/view?usp=sharing" target="_blank">here</a> and place it in ```input2/``` folder.)
+- 📁 **outputs/** → Stores all the extracted, aligned, and segmented results.  
+- 📁 csv_files/ _(Optional)_ → Stores trial-specific LSL-synced *raw* audio files (.CSV format).  
+- 📁 audio_files/ _(Optional)_ → Stores trial-specific LSL-synced *processed* audio files (.WAV format).  
+- 📁 shign/ → Hosts a modified version of the  <a href="https://github.com/KnurpsBram/shign" target="_blank">Shign package</a>.  
+- 📄 **synchronize_and_cut_script.ipynb**  
+- 📄 requirements.txt  
+
+
+## Usage Instructions:
+
+- Select the appropriate synchronization scenario based on your data.
+- Ensure that the video/audio files are placed in the correct input folders.
+- Open **synchronize_and_cut_script.ipynb** in Jupyter Notebook (or VSCode) and execute the necessary cells corresponding to your selected use case. Follow the detailed instructions provided within the notebook.
 
 ## Troubleshooting
-- FFmpeg not found - Ensure FFmpeg is on your system PATH.
-- Memory issues - If your CSV files or videos are too large, you may need more RAM. It is normal for the some parts of the script to take a while depending on the specifics of your computer, video, or audio.
+FFmpeg not found - Ensure FFmpeg is on your system PATH.
+Memory issues - If your CSV files or videos are too large, you may need more RAM. It is normal for the some parts of the script to take a while depending on the specifics of your computer, video, or audio.
 
 ## **Note about Shign**   
 This repository hosts a stable and slightly modified version of **Shign** to prevent any dependency issues after possible future updates.   
 For the original repository, please visit:   
-[Shign GitHub Repository](https://github.com/KnurpsBram/shign)
+  <a href="https://github.com/KnurpsBram/shign" target="_blank">Shign GitHub Repository</a>
 
 ## Contact:
 nalbantogluhamza@gmail.com (Hamza Nalbantoğlu)

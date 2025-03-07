@@ -1,1 +1,1 @@
-# This folder will contain the final videos with embedded audio. The script in the notebook takes the cut videos from cut_videos/ and the corresponding audio from audio_files/, merges them, and saves them here with the same video name.
+# This folder will contain the **OPTIONAL** final videos with embedded audio. The script in the notebook takes the cut videos from cut_videos/ and the corresponding audio from audio_files/, merges them, and saves them here with the same video name.
