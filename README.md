@@ -74,6 +74,7 @@ Before running the script, place your input files inside two folders:
 - Select the appropriate synchronization scenario based on your data.
 - Ensure that the video/audio files are placed in the correct input folders.
 - Open **synchronize_and_cut_script.ipynb** in Jupyter Notebook (or VSCode) and execute the necessary cells corresponding to your selected use case. Follow the detailed instructions provided within the notebook.
+- **synchronize_and_cut_script_linked_output.html** provides a version of the notebook that includes outputs for the video-audio alignment (Option 1), as well as LSL-based trial segmentation and audio mapping. (For the best experience, view it in a browser such as Google Chrome or Opera.)
 
 ## Troubleshooting
 FFmpeg not found - Ensure FFmpeg is on your system PATH.
