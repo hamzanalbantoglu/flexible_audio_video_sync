@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Nalbantoglu"
+  given-names: "Hamza"
+- family-names: "Kadava"
+  given-names: "Sarka"
+  orcid: "https://orcid.org/0009-0007-4001-6831"
+title: "Multi-Scenario Video and Audio Synchronization and Segmentation"
+version: 1.0.0
+date-released: 17-3-2025
+url: "https://github.com/hamzanalbantoglu/flexible_audio_video_sync"
