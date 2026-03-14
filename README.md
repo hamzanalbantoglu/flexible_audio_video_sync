@@ -13,6 +13,12 @@ It supports **three main scenarios**:
 - **Segment** an aligned video into **trial-sized clips** based on LSL timestamps.
 - **Overlay trial-specific audio** onto segmented videos for verification, or increased audio quality.
 
+## Citation
+If you use this pipeline in your research or project, please cite it as follows:
+> Nalbantoğlu, H., & Kadavá, Š. (2024). Multi-Scenario Video and Audio Synchronization and Segmentation (Version 1.0.0). Zenodo. https://doi.org/10.5281/zenodo.19020823
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19020823.svg)](https://doi.org/10.5281/zenodo.19020823)
+
 ## Prerequisites
 - Python 3.10 or later.
 - **"FFmpeg"** installed and added to PATH. Installation guide for Windows 
